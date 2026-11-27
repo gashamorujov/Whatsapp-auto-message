@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      PORT: 3000
+      BOT_DATA_DIR: /app/data
+    volumes:
+      # Sessiya (WhatsApp qoşulması) və məlumat qovluğu qalıcı olsun
+      - ./data:/app/data
+      - ./sessions:/app/sessions
+      - ./temp:/app/temp

@@ -1,0 +1,28 @@
+{
+  "name": "ist-dnizcilik-bot",
+  "version": "1.1.0",
+  "description": "İST Services Dənizcilik Təlim Mərkəzi — WhatsApp avtomatik cavab botu (sertifikat + kurs qeydiyyatı yoxlaması), Telegram idarəetmə paneli ilə. Env faylı lazım deyil — bütün konfiqurasiya config.js-dədir.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "start:full": "node index.js",
+    "bot": "node bot.js",
+    "telegram": "node bot.js --telegram-only",
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check-syntax.js",
+    "lint": "node scripts/check-syntax.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc.9",
+    "express": "4.22.2",
+    "fs-extra": "11.3.1",
+    "node-cache": "5.1.2",
+    "node-telegram-bot-api": "0.64.0",
+    "pino": "8.21.0",
+    "qrcode": "1.5.4"
+  },
+  "engines": {
+    "node": ">=18.0.0 <23.0.0"
+  },
+  "private": true
+}

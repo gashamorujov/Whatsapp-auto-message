@@ -1,7 +1,7 @@
 /**
  * config.js — yeganə yerdə doldurmalı olduğunuz fayl.
  *
- * Telegram bot tokenini TELEGRAM_TOKEN mühit dəyişəni ilə verin.
+ * 1) Telegram bot tokeninizi (@BotFather-dan) aşağıdakı dırnaqların arasına yazın.
  * 2) Cədvəl linkləri — default olaraq artıq qoyulub. Telegram-dan
  *    "🎓 Kurs cədvəli" / "📜 Sertifikat cədvəli" düymələri ilə
  *    istədiyiniz vaxt dəyişə bilərsiniz (dəyişiklik data/sheets.json-da qalır).
@@ -12,7 +12,7 @@
  */
 module.exports = {
   // @BotFather-dan aldığınız bot tokenı
-  telegramToken: process.env.TELEGRAM_TOKEN || '',
+  telegramToken: '8843377166:AAE-YiwSSP85qQmSKwuvFAbkwN9ZeYZYslI',
 
   // Cədvəl linkləri — Telegram panelində dəyişdirilə bilər.
   sheets: {

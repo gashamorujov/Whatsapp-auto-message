@@ -10,8 +10,8 @@ WhatsApp-a yazılan hər mesajı **avtomatik cavablandıran** bot. İki əsas fu
 Cədvəl məlumatları Google Sheets-dən saatda bir dəfə çəkilir və yadda saxlanılır.
 Bütün idarəetmə (link dəyişmə, statistika, test, Restart) **Telegram panelində** aparılır.
 
-> ⚙️ Telegram tokenini `TELEGRAM_TOKEN` mühit dəyişəni ilə verin.
-> Cədvəl linkləri `config.js` faylındadır:
+> ⚙️ **`.env` faylı lazım DEYİL.** Bütün konfiqurasiya `config.js` faylındadır
+> (Telegram tokeni + cədvəl linkləri). Bot heç nə təyin etmədən işləyir:
 >
 > ```bash
 > npm install
@@ -62,7 +62,7 @@ npm install
 
 ```js
 module.exports = {
-  telegramToken: process.env.TELEGRAM_TOKEN || '', // @BotFather-dan alınan tokeni env-də verin
+  telegramToken: '1234567890:ABC...',        // @BotFather-dan
   sheets: {
     certificate: { url: 'https://docs.google.com/spreadsheets/d/.../edit?gid=...' },
     course:      { url: 'https://docs.google.com/spreadsheets/d/.../edit?gid=...' },
@@ -70,8 +70,9 @@ module.exports = {
 };
 ```
 
-> Tokeni `TELEGRAM_TOKEN` mühit dəyişəni ilə konfiqurasiya edin.
-> Real tokenləri repository-yə əlavə etməyin.
+> Token artıq `config.js` faylındadır — heç nə etmək lazım deyil.
+> `.env` + `TELEGRAM_TOKEN` variantı da işləyir (mühit dəyişəni üstündür),
+> lakin **vacib deyil**.
 
 ### 4. İşə salmaq
 
@@ -430,7 +431,7 @@ node scripts/wa-selftest.js       # WhatsApp uçdan-uca yoxlama (bot dayandırı
 | Bot cavab vermir | **⚙️ Ayarlar → Avtomatik cavab** açıldığını yoxlayın; rate limitə görə bloklanmış ola bilər |
 | Qarşılama təkrar göndərilir | **👥 İstifadəçilər → 🔄 Restart** düyməsini basın |
 | Pair code işləmir | Əvvəlcə köhnə Linked Device-i silin, sonra **QR Code** üsulunu yoxlayın |
-| Telegram token işləmir | `TELEGRAM_TOKEN` mühit dəyişənini yoxlayın |
+| Telegram token işləmir | `config.js` faylındakı `telegramToken` dəyərini yoxlayın |
 
 ---
 
